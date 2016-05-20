@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @shot.id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @shot.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shot.description %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @shot.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @shot.height %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @shot.tags %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @shot.image_url %>
+</p>
+
+<p>
+  <strong>Image path:</strong>
+  <%= @shot.image_path %>
+</p>
+
+<%= link_to 'Edit', edit_shot_path(@shot) %> |
+<%= link_to 'Back', shots_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Tags</th>
+      <th>Image url</th>
+      <th>Image path</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shots.each do |shot| %>
+      <tr>
+        <td><%= shot.id %></td>
+        <td><%= shot.title %></td>
+        <td><%= shot.description %></td>
+        <td><%= shot.width %></td>
+        <td><%= shot.height %></td>
+        <td><%= shot.tags %></td>
+        <td><%= shot.image_url %></td>
+        <td><%= shot.image_path %></td>
+        <td><%= link_to 'Show', shot %></td>
+        <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+        <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shot', new_shot_path %>
