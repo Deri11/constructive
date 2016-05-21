@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521175820) do
+ActiveRecord::Schema.define(version: 20160521183843) do
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20160521175820) do
     t.integer  "rebounds_count"
     t.integer  "buckets_count"
     t.integer  "dribbble_id"
+    t.string   "html_url"
+    t.string   "attachments_url"
+    t.string   "buckets_url"
+    t.string   "comments_url"
+    t.string   "likes_url"
+    t.string   "projects_url"
+    t.boolean  "animated"
+    t.integer  "user_id"
+    t.string   "user_name"
+    t.string   "user_username"
+    t.string   "user_html_url"
+    t.string   "user_avatar_url"
+    t.string   "user_bio"
+    t.string   "user_location"
   end
 
 end
