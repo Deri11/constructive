@@ -14,16 +14,15 @@ namespace :dribbble do
       ns.description = s["description"]
       ns.width = s["width"]
       ns.height = s["height"]
-      # ns.images_hidpi = s["image"]
-      # ns.images_normal = s['image_normal']
-      # ns.images_teaser = s["image_teaser"]
+      ns.images_hidpi = s["images"]["hidpi"]
+      ns.images_normal = s["images"]["normal"]
+      ns.images_teaser = s["images"]["teaser"]
       ns.viewcount = s["views_count"]
       ns.likes_count = s['likes_count']
       ns.comments_count = s['comments_count']
       ns.attachments_count = s['attachments_count']
       ns.rebounds_count = s['rebounds_count']
       ns.buckets_count = s['buckets_count']
-
       ns.html_url = s['html_url']
       ns.attachments_url = s["attatchments_url"]
       ns.buckets_url = s['buckets_url']
@@ -32,7 +31,6 @@ namespace :dribbble do
       ns.projects_url = s['projects_url']
       ns.animated = s['animated']
       ns.tags = s['tags']
-
       ns.user_id = s['user_id']
       ns.user_name = s['user_name']
       ns.user_username = s['user_username']
@@ -40,32 +38,27 @@ namespace :dribbble do
       ns.user_avatar_url = s['user_avatar_url']
       ns.user_bio = s['user_bio']
       ns.user_location = s['user_location']
+      ns.buckets_count = s['buckets_count']
+      ns.comments_received_count = s['comments_received_count']
+      ns.followers_count = s['followers_count']
+      ns.followings_count = s['followings_count']
+      ns.likes_count = s['likes_count']
+      ns.likes_received_count = s['likes_received_count']
+      ns.projects_count = s['projects_count']
+      ns.rebounds_received_count = s['rebounds_received_count']
+      ns.shots_count = s['shots_count']
+      ns.teams_count = s['teams_count']
+      ns.can_upload_shot = s['can_upload_shot']
+      ns.type = s['type']
+      ns.pro = s['pro']
+      ns.followers_url = s['followers_url']
+      ns.following_url = s['following_url']
+      ns.shots_url = s['shots_url']
+      ns.teams_url = s['teams_url']
+      ns.team = s['team']
 
-
-      # ns.buckets_count = s['buckets_count']
-      # ns.comments_received_count = s['comments_received_count']
-      # ns.followers_count = s['followers_count']
-      # ns.followings_count = s['followings_count']
-      # ns.likes_count = s['likes_count']
-      # ns.likes_received_count = s['likes_received_count']
-      # ns.projects_count = s['projects_count']
-      # ns.rebounds_received_count = s['rebounds_received_count']
-      # ns.shots_count = s['shots_count']
-      # ns.teams_count = s['teams_count']
-      # ns.can_upload_shot s['can_upload_shot']
-      # ns.type = s['type']
-      # ns.pro = s['pro']
-      # ns.buckets_url = s['buckets_url']
-      # ns.followers_url = s['followers_url']
-      # ns.following_url = s['following_url']
-      # ns.likes_url = s['likes_url']
-      # ns.projects_url = s['projects_url']
-      # ns.shots_url = s['shots_url']
-      # ns.teams_url = s['teams_url']
-      # ns.team = s['team']
-
-
-      puts ns.inspect
+      ns.save
+      
 
     end
 
@@ -80,7 +73,9 @@ namespace :dribbble do
 
   desc "TODO"
   task get_popular: :environment do
-  puts "Constructive is getting most popular shots"
+
+
+
   end
 
 end

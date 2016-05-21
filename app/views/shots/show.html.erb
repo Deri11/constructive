@@ -31,14 +31,11 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @shot.image_url %>
+  <strong>Image:</strong>
+  <%= image_tag @shot.images_normal %>
 </p>
 
-<p>
-  <strong>Image path:</strong>
-  <%= @shot.image_path %>
-</p>
+
 
 <%= link_to 'Edit', edit_shot_path(@shot) %> |
 <%= link_to 'Back', shots_path %>

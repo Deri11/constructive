@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521183843) do
+ActiveRecord::Schema.define(version: 20160521200539) do
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20160521183843) do
     t.string   "tags"
     t.string   "image_url"
     t.string   "image_path"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "viewcount"
     t.integer  "likes_count"
     t.integer  "comments_count"
@@ -44,6 +44,25 @@ ActiveRecord::Schema.define(version: 20160521183843) do
     t.string   "user_avatar_url"
     t.string   "user_bio"
     t.string   "user_location"
+    t.integer  "comments_received_count"
+    t.integer  "followers_count"
+    t.integer  "followings_count"
+    t.integer  "likes_received_count"
+    t.integer  "projects_count"
+    t.integer  "rebounds_received_count"
+    t.integer  "shots_count"
+    t.integer  "teams_count"
+    t.boolean  "can_upload_shot"
+    t.string   "type"
+    t.boolean  "pro"
+    t.string   "followers_url"
+    t.string   "following_url"
+    t.string   "shots_url"
+    t.string   "teams_url"
+    t.string   "team"
+    t.string   "images_hidpi"
+    t.string   "images_normal"
+    t.string   "images_teaser"
   end
 
 end
