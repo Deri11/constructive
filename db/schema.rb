@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519231911) do
+ActiveRecord::Schema.define(version: 20160521175820) do
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
@@ -21,8 +21,15 @@ ActiveRecord::Schema.define(version: 20160519231911) do
     t.string   "tags"
     t.string   "image_url"
     t.string   "image_path"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "viewcount"
+    t.integer  "likes_count"
+    t.integer  "comments_count"
+    t.integer  "attachments_count"
+    t.integer  "rebounds_count"
+    t.integer  "buckets_count"
+    t.integer  "dribbble_id"
   end
 
 end
