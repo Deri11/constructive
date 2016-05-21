@@ -1,7 +1,7 @@
 class CreateShots < ActiveRecord::Migration
   def change
     create_table :shots do |t|
-      t.integer :id
+      # t.integer :id
       t.string :title
       t.string :description
       t.string :width

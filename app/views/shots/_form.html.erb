@@ -35,11 +35,14 @@
     <%= f.label :tags %><br>
     <%= f.text_field :tags %>
   </div>
-  <!-- <div class="field">
-    <%= f.label :images %><br>
-    <%= image_tag @shot.images_teaser %>
-  </div> -->
-
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :image_path %><br>
+    <%= f.text_field :image_path %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
