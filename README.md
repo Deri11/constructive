@@ -1,4 +1,4 @@
-# CONSTRUCTIVE | empowered creativity
+# CONSTRUCTIVE | empowered creativity  ![logo](http://s32.postimg.org/rs2i3yxfp/php_R89d_YEAM.jpg)
 
 Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Get ***CONSTRUCTIVE***, be empowered.
 
