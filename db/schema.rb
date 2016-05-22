@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521200539) do
+ActiveRecord::Schema.define(version: 20160522184525) do
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160521200539) do
     t.integer  "shots_count"
     t.integer  "teams_count"
     t.boolean  "can_upload_shot"
-    t.string   "type"
+    t.string   "dribbble_type"
     t.boolean  "pro"
     t.string   "followers_url"
     t.string   "following_url"
