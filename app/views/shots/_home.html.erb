@@ -1,246 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CONSTRUCTIVE | empowered creativity</title>
-
-    <!-- Styles -->
-    <link href="assets/css/app.min.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="assets/img/favicon.ico">
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
   </head>
 
-  <body class="sticky-nav">
+    <body class="sticky-nav">
 
-    <!-- Navigation bar -->
-    <nav class="navbar">
-      <div class="container">
+      <!-- Navigation bar -->
+      <nav class="navbar">
+        <div class="container">
 
-        <!-- Logo and navigation links -->
-        <div class="pull-left">
-          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+          <!-- Logo and navigation links -->
+          <div class="pull-left">
+            <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
-          <div class="logo">
-            <a href="#"><img src="master_logo.png" alt="constructive-logo"></a>
+            <div class="logo">
+              <a href="#"><%= image_tag 'master_logo.png', alt:'constructive-logo' %></a>
+            </div>
+
+            <ul class="nav-menu">
+              <li>
+                <a href="#">Home</a>
+                <ul>
+                  <li><a href="#">MENU 1</a></li>
+                  <li><a href="#">MENU 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Explore</a>
+                <ul>
+                  <li><a href="#">Style 1</a></li>
+                  <li><a href="#">Style 2</a></li>
+                  <li><a href="#">Style 3 - Cols 4</a></li>
+                  <li><a href="#">Style 3 - Cols 3</a></li>
+                  <li><a href="#">Style 3 - Cols 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="active" href="#">Pages</a>
+                <ul>
+                  <li><a href="#">Add Shot</a></li>
+                  <li><a href="#">Shot - Image</a></li>
+                  <li><a href="#">Shot - Gallery</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a class="active" href="#">FAQ</a></li>
+                  <li><a href="#">Search</a></li>
+                  <li><a href="#">Typography</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">User account</a>
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Followers - 1</a></li>
+                  <li><a href="#">Followers - 2</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Register</a></li>
+                  <li><a href="#">Forget pass</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">SUB MENU</a>
+                <ul>
+                  <li><a href="#"><strong>ITEM</strong></a></li>
+                  <li><a href="#">ITEM</a></li>
+                  <li><a href="#">ITEM</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
+          <!-- END Logo and navigation links -->
 
-          <ul class="nav-menu">
-            <li>
-              <a href="#">Home</a>
-              <ul>
-                <li><a href="#">MENU 1</a></li>
-                <li><a href="#">MENU 2</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Explore</a>
-              <ul>
-                <li><a href="#">Style 1</a></li>
-                <li><a href="#">Style 2</a></li>
-                <li><a href="#">Style 3 - Cols 4</a></li>
-                <li><a href="#">Style 3 - Cols 3</a></li>
-                <li><a href="#">Style 3 - Cols 2</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="active" href="#">Pages</a>
-              <ul>
-                <li><a href="#">Add Shot</a></li>
-                <li><a href="#">Shot - Image</a></li>
-                <li><a href="#">Shot - Gallery</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a class="active" href="#">FAQ</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Typography</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">User account</a>
-              <ul>
+          <!-- User account and action buttons -->
+          <div class="pull-right">
+            <a class="btn-navbar search-opener" href="#"><i class="ti-search"></i></a>
+            <a class="btn-navbar" href="#"><i class="ti-plus"></i></a>
+
+            <div class="dropdown user-account">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <img src="assets/img/avatar-2.jpg" alt="avatar">
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="#">Profile</a></li>
-                <li><a href="#">Followers - 1</a></li>
-                <li><a href="#">Followers - 2</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Forget pass</a></li>
+                <li><a href="#">Logout</a></li>
               </ul>
-            </li>
-            <li>
-              <a href="#">SUB MENU</a>
-              <ul>
-                <li><a href="#"><strong>ITEM</strong></a></li>
-                <li><a href="#">ITEM</a></li>
-                <li><a href="#">ITEM</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!-- END Logo and navigation links -->
+            </div>
 
-        <!-- User account and action buttons -->
-        <div class="pull-right">
-          <a class="btn-navbar search-opener" href="#"><i class="ti-search"></i></a>
-          <a class="btn-navbar" href="#"><i class="ti-plus"></i></a>
-
-          <div class="dropdown user-account">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-              <img src="assets/img/avatar-2.jpg" alt="avatar">
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><a href="#">Logout</a></li>
-            </ul>
           </div>
+          <!-- END User account and action buttons -->
+
+          <!-- Search screen -->
+          <div class="search-screen closed">
+            <button class="search-closer"><i class="ti-close"></i></button>
+            <form class="search-form" action="page-search.html">
+              <input type="text" autocomplete="off" placeholder="Search for inspiration...">
+            </form>
+          </div>
+          <!-- END Search screen -->
 
         </div>
-        <!-- END User account and action buttons -->
-
-        <!-- Search screen -->
-        <div class="search-screen closed">
-          <button class="search-closer"><i class="ti-close"></i></button>
-          <form class="search-form" action="page-search.html">
-            <input type="text" autocomplete="off" placeholder="Search for inspiration...">
-          </form>
-        </div>
-        <!-- END Search screen -->
-
-      </div>
-    </nav>
-    <!-- END Navigation bar -->
+      </nav>
+      <!-- END Navigation bar -->
 
 
-    <!-- Site header -->
-    <header class="site-header overlay-black no-padding-bottom text-center" style="background-image: url(bg-header.jpg)">
-      <div class="container">
-        <h1><strong>Welcome</strong> to Constructive</h1>
-        <br><br>
-        <div id="faq-search" class="form-group">
-          <i class="ti-search fa-flip-horizontal1"></i>
-          <input type="text" class="form-control" name="search" placeholder="Find your inspiration...">
-        </div>
-        <br><br><br>
-      </div>
-    </header>
-    <!-- END Site header -->
-
-
-    <!-- Main container -->
-    <main id="faq-result">
-      <section class="no-border-bottom">
+      <!-- Site header -->
+      <header class="site-header overlay-black no-padding-bottom text-center" style="background-image: url(bg-header.jpg)">
         <div class="container">
-          <header class="section-header text-left">
-            <span>WHITE BACKGROUND CONTAINER</span>
-            <h2></h2>
-          </header>
-          <!-- INSERT IMAGE GALLERY HERE -->
+          <h1><strong>Welcome</strong> to Constructive</h1>
+          <br><br>
+          <div id="faq-search" class="form-group">
+            <i class="ti-search fa-flip-horizontal1"></i>
+            <input type="text" class="form-control" name="search" placeholder="Find your inspiration...">
+          </div>
+          <br><br><br>
         </div>
-      </section>
+      </header>
+      <!-- END Site header -->
 
 
-      <section class="bg-gray-lighter no-border-bottom">
-        <div class="container">
-          <header class="section-header text-left">
-            <span>SOFT GREY BACKGROUND CONTAINER</span>
-            <h2></h2>
-          </header>
-          <!-- INSERT IMAGE GALLERY HERE -->
-        </div>
-      </section>
-    </main>
-    <!-- END Main container -->
-
-
-    <!-- Site footer -->
-    <footer class="site-footer">
-
-      <!-- Top section -->
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-5">
-            <h6>About</h6>
-            <p class="text-justify"><strong>CONSTRUCTIVE</strong> is a powerful, responsive, and high-performance image and designer resource specifically designed for developers. Made by students at <a href="#" target="_blank">Wyncode Academy</a> for <a href="#" target="_blank">The Last Mile</a>. Learn more about the life-saving work and success of <a href="#" target="_blank">The Last Mile</a>.</p>
-            <p><strong><i>Get CONSTRUCTIVE, be empowered.</i></strong></p>
+      <!-- Main container -->
+      <main id="faq-result">
+        <section class="no-border-bottom">
+          <div class="container">
+            <header class="section-header text-left">
+              <span>WHITE BACKGROUND CONTAINER</span>
+              <h2></h2>
+            </header>
+            <!-- INSERT IMAGE GALLERY HERE -->
           </div>
+        </section>
 
-          <div class="col-xs-12 col-sm-4 col-md-2">
-            <h6>Company</h6>
-            <ul class="footer-links">
-              <li><a href="#">About us</a></li>
-              <li><a href="#">How it works</a></li>
-              <li><a href="#">Terms of use</a></li>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Contact us</a></li>
-            </ul>
+
+        <section class="bg-gray-lighter no-border-bottom">
+          <div class="container">
+            <header class="section-header text-left">
+              <span>SOFT GREY BACKGROUND CONTAINER</span>
+              <h2></h2>
+            </header>
+            <!-- INSERT IMAGE GALLERY HERE -->
           </div>
+        </section>
+      </main>
+      <!-- END Main container -->
 
-          <div class="col-xs-12 col-sm-4 col-md-2">
-            <h6>Support</h6>
-            <ul class="footer-links">
-              <li><a href="#">Help center</a></li>
-              <li><a href="#">Tutorials</a></li>
-              <li><a href="#">Forums</a></li>
-              <li><a href="#">Official blog</a></li>
-              <li><a href="#">Ask question</a></li>
-            </ul>
-          </div>
-
-          <div class="col-xs-12 col-sm-4 col-md-3">
-            <h6>Newsletter</h6>
-            <p><strong>Subscribe</strong> to The Last Mile newsletter for updates:</p>
-            <br>
-            <input type="text" class="form-control" placeholder="Enter your email address">
-            <button class="btn btn-primary btn-sm btn-block" type="button"><i class="fa fa-paper-plane"></i> Subscribe</button>
-          </div>
-        </div>
-
-        <hr>
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-5">
+        <h6>About</h6>
+        <p class="text-justify"><strong>CONSTRUCTIVE</strong> is a powerful, responsive, and high-performance image and designer resource specifically designed for developers. Made by students at <a href="#" target="_blank">Wyncode Academy</a> for <a href="#" target="_blank">The Last Mile</a>. Learn more about the life-saving work and success of <a href="#" target="_blank">The Last Mile</a>.</p>
+        <p><strong><i>Get CONSTRUCTIVE, be empowered.</i></strong></p>
       </div>
-      <!-- END Top section -->
 
-      <!-- Bottom section -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="#">CODE FLL, Inc.</a></p>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
+      <div class="col-xs-12 col-sm-4 col-md-2">
+        <h6>Company</h6>
+        <ul class="footer-links">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
       </div>
-      <!-- END Bottom section -->
 
-    </footer>
-    <!-- END Site footer -->
+      <div class="col-xs-12 col-sm-4 col-md-2">
+        <h6>Support</h6>
+        <ul class="footer-links">
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Forums</a></li>
+          <li><a href="#">Official blog</a></li>
+          <li><a href="#">Ask question</a></li>
+        </ul>
+      </div>
 
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <h6>Newsletter</h6>
+        <p><strong>Subscribe</strong> to The Last Mile newsletter for updates:</p>
+        <br>
+        <input type="text" class="form-control" placeholder="Enter your email address">
+        <button class="btn btn-primary btn-sm btn-block" type="button"><i class="fa fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
 
-    <!-- Back to top button -->
-    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
-    <!-- END Back to top button -->
+    <hr>
+  </div>
+  <!-- Very bottom section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="#">CODE FLL, Inc.</a></p>
+      </div>
 
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Back to top button -->
+<a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
 
-    <script src="assets/js/app.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-
-  </body>
+</body>
 </html>
