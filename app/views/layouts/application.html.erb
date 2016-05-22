@@ -8,6 +8,7 @@
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <script src="https://use.fontawesome.com/3fa12692e9.js"></script>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <script src="https://use.fontawesome.com/3fa12692e9.js"></script>
       <%= csrf_meta_tags %>
   </head>
 
@@ -15,7 +16,7 @@
       <!-- Navigation bar -->
       <nav class="navbar">
         <div class="container">
-          <!-- Logo and nav links -->
+          <!-- Logo and links -->
           <div class="pull-left">
             <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
@@ -57,7 +58,8 @@
                   <li><a class="active" href="#">Learning</a></li>
                 </ul>
               </li>
-              <!-- <li>
+              <!-- Save for later?
+              <li>
                 <a href="#">User account</a>
                 <ul>
                   <li><a href="#">Profile</a></li>
@@ -72,10 +74,9 @@
             </ul>
           </div>
 
-          <!-- User account and action buttons -->
+          <!-- User account and action buttons, top right  -->
           <div class="pull-right">
-            <a class="btn-navbar search-opener" href="#"><i class="ti-search"></i></a>
-            <a class="btn-navbar" href="#"><i class="ti-plus"></i></a>
+            <a class="btn-navbar search-opener" href="#"><i class="fa fa-search"></i></a></a>
 
             <div class="dropdown user-account">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -93,7 +94,7 @@
 
           <!-- Search screen -->
           <div class="search-screen closed">
-            <button class="search-closer"><i class="ti-close"></i></button>
+            <button class="search-closer"><i class="fa fa-times"></i></button>
             <form class="search-form" action="page-search.html">
               <input type="text" autocomplete="off" placeholder="Search for inspiration...">
             </form>
@@ -109,7 +110,8 @@
           <h1>Welcome to Constructive</h1>
           <br><br>
           <div id="faq-search" class="form-group">
-            <i class="ti-search <%= asset_path('fa-flip-horizontal1') %>"></i>
+            <i class="ti-search fa fa-hand-o-right" aria-hidden="true"></i>
+            <!-- <i class="ti-search fa-flip-horizontal1"></i> -->
             <input type="text" class="form-control" name="search" placeholder="Find your inspiration...">
           </div>
           <br><br><br>
@@ -117,29 +119,16 @@
       </header>
 
       <!-- Main container -->
-      <main id="faq-result">
-        <section class="no-border-bottom">
+      <main id="search-page">
           <div class="container">
-            <header class="section-header text-left">
-              <span>WHITE BACKGROUND CONTAINER</span>
-              <h2></h2>
-            </header>
-            <%= yield %>
-          </div>
-        </section>
+            <section class="no-border-bottom">
 
-        <section class="bg-gray-lighter no-border-bottom">
-          <div class="container">
-            <header class="section-header text-left">
-              <span>SOFT GREY BACKGROUND CONTAINER</span>
-              <h2></h2>
-            </header>
-            <!-- INSERT IMAGE GALLERY HERE -->
-          </div>
-        </section>
-      </main>
+              <%= yield %>
 
-<!-- Site footer -->
+            </section>
+          </div>
+
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="row">
@@ -182,8 +171,9 @@
 
     <hr>
   </div>
-  <!-- Very bottom section -->
-  <div class="container">
+
+  <!-- Very bottom section - Do we even need this? -->
+  <!-- <div class="container">
     <div class="row">
       <div class="col-md-8 col-sm-6 col-xs-12">
         <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="#">CODE FLL, Inc.</a></p>
@@ -199,10 +189,11 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
 </footer>
+
 <!-- Back to top button -->
-<a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+<a id="scroll-up" href="#"><i class="fa fa-chevron-up"></i></a>
 
 </body>
 </html>

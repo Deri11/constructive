@@ -1,8 +1,5 @@
-
 $(function() {
-
   "use strict";
-
 
   $('.header-shot-slider').lightSlider({
       item: 1,
@@ -13,12 +10,6 @@ $(function() {
       pauseOnHover: true
   });
 
-
-  // Disable Links!
-  $('a[href="#"]').on('click', function(e){
-    e.preventDefault();
-  });
-
   // Back to top
   $('#scroll-up').on( 'click', function() {
     $('html, body').animate({scrollTop : 0}, 600);
@@ -26,7 +17,7 @@ $(function() {
   });
 
   // Image gallery
-  initGallery();
+  // initGallery();
 
   // Smoothscroll to anchor
   $('a[href^="#"]:not([href="#"])').on('click', function(){
