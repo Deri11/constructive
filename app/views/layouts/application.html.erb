@@ -28,35 +28,38 @@
             <ul class="nav-menu">
               <li>
                 <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Shots</a>
                 <ul>
-                  <li><a href="#">MENU 1</a></li>
-                  <li><a href="#">MENU 2</a></li>
+                  <li><a href="#">Popular</a></li>
+                  <li><a href="#">Tags</a></li>
+                  <li><a href="#">Buckets</a></li>
+                  <li><a href="#">Designers</a></li>
+                  <li><a class="active" href="#"><strong>Search</strong></a></li>
                 </ul>
               </li>
               <li>
-                <a href="#">Explore</a>
+                <a href="#">Designers</a>
+              </li>
+              <li>
+                <a class="active" href="#">Buckets</a>
+              </li>
+              <li>
+                <a href="#">Tags</a>
                 <ul>
-                  <li><a href="#">Style 1</a></li>
-                  <li><a href="#">Style 2</a></li>
-                  <li><a href="#">Style 3 - Cols 4</a></li>
-                  <li><a href="#">Style 3 - Cols 3</a></li>
-                  <li><a href="#">Style 3 - Cols 2</a></li>
+                  <li><a href="#">ITEM</a></li>
+                  <li><a class="active" href="#">ITEM</a></li>
                 </ul>
               </li>
               <li>
-                <a class="active" href="#">Pages</a>
+                <a href="#">Resources</a>
                 <ul>
-                  <li><a href="#">Add Shot</a></li>
-                  <li><a href="#">Shot - Image</a></li>
-                  <li><a href="#">Shot - Gallery</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a class="active" href="#">FAQ</a></li>
-                  <li><a href="#">Search</a></li>
-                  <li><a href="#">Typography</a></li>
+                  <li><a href="#">Tech News</a></li>
+                  <li><a class="active" href="#">Learning</a></li>
                 </ul>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#">User account</a>
                 <ul>
                   <li><a href="#">Profile</a></li>
@@ -64,18 +67,10 @@
                   <li><a href="#">Followers - 2</a></li>
                   <li><a href="#">Settings</a></li>
                   <li><a href="#">Login</a></li>
-                  <li><a href="#">Register</a></li>
-                  <li><a href="#">Forget pass</a></li>
+                  <li><a class="active" href="#"><strong>Register</strong></a></li>
+                  <li><a href="#">Forgot password</a></li>
                 </ul>
-              </li>
-              <li>
-                <a href="#">SUB MENU</a>
-                <ul>
-                  <li><a href="#"><strong>ITEM</strong></a></li>
-                  <li><a href="#">ITEM</a></li>
-                  <li><a href="#">ITEM</a></li>
-                </ul>
-              </li>
+              </li> -->
             </ul>
           </div>
           <!-- END Logo and navigation links -->
@@ -115,9 +110,11 @@
 
 
       <!-- Site header -->
-      <header class="site-header overlay-black no-padding-bottom text-center" style="background-image: url(bg-header.jpg)">
+
+      <header class="site-header overlay-black no-padding-bottom text-center">
+        <%= image_tag 'bg-header.jpg', style: "background-image" %>
         <div class="container">
-          <h1><strong>Welcome</strong> to Constructive</h1>
+          <h1>Welcome to Constructive</h1>
           <br><br>
           <div id="faq-search" class="form-group">
             <i class="ti-search fa-flip-horizontal1"></i>
