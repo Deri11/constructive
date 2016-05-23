@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :buckets
+  resources :comments
+  resources :users
   resources :shots
 
   root 'home#index'
+  get 'users' => 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
