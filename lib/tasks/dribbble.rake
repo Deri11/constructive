@@ -132,7 +132,31 @@ namespace :dribbble do
 
       ns.save
     end
+
   end
+
+  desc "TODO"
+  task get_comment: :environment do
+    url="https://api.dribbble.com/v1/shots/?sort=comments&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+
+    response= HTTParty.get(url)
+    recent_shots =JSON.parse(response.body)
+
+    recent_shots.each do |s|
+      nc= Comment.new
+      nc.comment_id = s["id"]
+      nc.comment_created_at = s["created_at"]
+      nc.body = s["body"]
+      nc.user_avatar_url = s["user"]["avatar_url"]
+      nc.user_id = s["user"]["id"]
+      nc.user_name = s['user']['name']
+
+    puts ns.inspect
+
+  end
+end
+
+
 
 
 
