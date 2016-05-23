@@ -628,7 +628,7 @@ section.section-lg {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #d2e9de;
   transition: .3s ease-in-out;
 }
 
@@ -642,7 +642,7 @@ section.section-lg {
 .search-screen.opened {
   bottom: 0;
   border-radius: 0;
-  opacity: 1;
+  opacity: 0.96;
   transform: scale(1);
 }
 

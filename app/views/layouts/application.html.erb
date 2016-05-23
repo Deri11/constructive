@@ -6,7 +6,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>CONSTRUCTIVE | empowered creativity</title>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <script src="https://use.fontawesome.com/3fa12692e9.js"></script>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <script src="https://use.fontawesome.com/3fa12692e9.js"></script>
       <%= csrf_meta_tags %>
@@ -102,31 +101,8 @@
 
         </div>
       </nav>
-      <!-- test  -->
 
-      <!-- header -->
-        <header class="site-header overlay-black no-padding-bottom text-center" style="background-image: url(<%= asset_path('bg-header.jpg') %>">
-        <div class="container">
-          <h1>Welcome to Constructive</h1>
-          <br><br>
-          <div id="faq-search" class="form-group">
-            <i class="ti-search fa fa-hand-o-right" aria-hidden="true"></i>
-            <!-- <i class="ti-search fa-flip-horizontal1"></i> -->
-            <input type="text" class="form-control" name="search" placeholder="Find your inspiration...">
-          </div>
-          <br><br><br>
-        </div>
-      </header>
-
-      <!-- Main container -->
-      <main id="search-page">
-          <div class="container">
-            <section class="no-border-bottom">
-
-              <%= yield %>
-
-            </section>
-          </div>
+    <%= yield %>
 
 <!-- Footer -->
 <footer class="site-footer">
