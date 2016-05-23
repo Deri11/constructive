@@ -1,6 +1,6 @@
 # CONSTRUCTIVE | empowered creativity  ![logo](http://s32.postimg.org/rs2i3yxfp/php_R89d_YEAM.jpg)
 
-Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Get ***CONSTRUCTIVE***, be empowered.
+Specifically designed for developers, ***CONSTRUCTIVE*** is a fully-responsive web application of the most influential and active designers and their creations. Need inspiration for your project?  Be inspired, be ***CONSTRUCTIVE***.
 
 ## Purpose of the app
 >The US accounts 25\% of the world's prison population, spending between $60-70k on each prisoner annually (5x more than higher education). After one year from release, 75\% are unemployed and over 60\% will return to prison. [The Last Mile](http://thelastmile.org/) is an organization that has been providing computer programming skills to inmates for the last five years. The recidivism rate for their students is 0\%. Not one former inmate has returned to jail upon release.
