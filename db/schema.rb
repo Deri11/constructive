@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523185250) do
+ActiveRecord::Schema.define(version: 20160524004542) do
 
   create_table "buckets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -76,8 +76,27 @@ ActiveRecord::Schema.define(version: 20160523185250) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "designer_id"
+    t.string   "designer_full_name"
+    t.string   "designer_username"
+    t.string   "designer_home_url"
+    t.string   "designer_avatar_url"
+    t.string   "designer_bio"
+    t.string   "designer_location"
+    t.string   "designer_bk_count"
+    t.string   "designer_comments_received_count"
+    t.string   "designer_follower_count"
+    t.string   "designer_is_following_count"
+    t.string   "designer_made_likes_count"
+    t.string   "designer_received_likes_count"
+    t.string   "designer_project_count"
+    t.string   "designer_rebounds_received_count"
+    t.string   "designer_added_shots_count"
+    t.string   "designer_list_of_followers_url"
+    t.string   "designer_following_list_url"
+    t.string   "designer_list_of_shots_url"
   end
 
 end

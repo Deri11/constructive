@@ -5,11 +5,13 @@ class ShotsController < ApplicationController
   # GET /shots.json
   def index
     @shots = Shot.all
+    @users = User.all
   end
 
   # GET /shots/1
   # GET /shots/1.json
   def show
+    @shot = Shot.find(params[:id])
   end
 
   # GET /shots/new
