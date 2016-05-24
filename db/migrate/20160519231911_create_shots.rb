@@ -9,7 +9,7 @@ class CreateShots < ActiveRecord::Migration
       t.string :tags
       t.string :image_url
       t.string :image_path
-      belongs_to :user, index: true
+      t.belongs_to :user, index: true
       t.timestamps null: false
     end
   end

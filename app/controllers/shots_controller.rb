@@ -1,5 +1,5 @@
 class ShotsController < ApplicationController
-  before_action :set_shot, only: [:show, :edit, :update, :destroy]
+  # before_action :set_shot, only: [:show, :edit, :update, :destroy]
 
   # GET /shots
   # GET /shots.json

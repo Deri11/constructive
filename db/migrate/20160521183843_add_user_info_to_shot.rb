@@ -1,6 +1,5 @@
 class AddUserInfoToShot < ActiveRecord::Migration
   def change
-    add_column :shots, :user_id, :Integer
     add_column :shots, :user_name, :string
     add_column :shots, :user_username, :string
     add_column :shots, :user_html_url, :string

@@ -19,15 +19,18 @@ ActiveRecord::Schema.define(version: 20160524004542) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.string   "comment_id"
+    t.integer  "shots_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "comment_id"
     t.string   "comment_created_at"
     t.string   "body"
     t.string   "user_avatar_url"
     t.string   "user_id"
     t.string   "user_name"
   end
+
+  add_index "comments", ["shots_id"], name: "index_comments_on_shots_id"
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
@@ -37,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "tags"
     t.string   "image_url"
     t.string   "image_path"
+    t.integer  "user_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "viewcount"
@@ -53,7 +57,6 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "likes_url"
     t.string   "projects_url"
     t.boolean  "animated"
-    t.integer  "user_id"
     t.string   "user_name"
     t.string   "user_username"
     t.string   "user_html_url"
@@ -80,6 +83,8 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "images_normal"
     t.string   "images_teaser"
   end
+
+  add_index "shots", ["user_id"], name: "index_shots_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                       null: false

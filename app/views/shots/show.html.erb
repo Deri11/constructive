@@ -7,7 +7,7 @@
     <div class="container">
       <header class="section-header">
         <h3><%= @shot.title %></h3>
-        <p>Posted by <%= link_to @shot.user.designer_username, user_path(@shot.user_id) %></p>
+        <p>Posted by <%= link_to @shot.user, user_path(@shot.user) %></p>
       </header>
 
 
@@ -82,7 +82,7 @@
           <!-- User widget -->
           <div class="sidebar-block">
             <div class="shot-by-widget">
-              <a href="user-profile.html"><%= image_tag @shot.user.designer_avatar_url , alt:'' %></a>
+              <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user_avatar_url , alt:'avatar' %></a>
               <a class="username" href="user-profile.html"><%= @shot.user_name %></a>
               <%= content_tag(:p, @shot.user_username, class:'title' ) %>
               <p class="subtitle"><%= @shot.user_bio %></p>
