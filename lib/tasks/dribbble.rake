@@ -9,6 +9,7 @@ namespace :dribbble do
 
     recent_shots.each do |s|
       ns= Shot.new
+      us= User.new
       ns.dribbble_id = s["id"]
       ns.title = s["title"]
       ns.description = s["description"]
@@ -31,8 +32,8 @@ namespace :dribbble do
       ns.projects_url = s['projects_url']
       ns.animated = s['animated']
       ns.tags = s['tags']
-      ns.user_id = s['user']['id']
-      ns.user_name = s['user']['name']
+      us.user_id = s['user']['id']
+      us.user_name = s['user']['name']
       ns.user_username = s['user']['username']
       ns.user_html_url = s['user']['html_url']
       ns.user_avatar_url = s['user']['avatar_url']
@@ -76,7 +77,6 @@ namespace :dribbble do
   desc "TODO"
   task get_popular: :environment do
     url="https://api.dribbble.com/v1/shots/?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
-
     response= HTTParty.get(url)
     recent_shots =JSON.parse(response.body)
 
@@ -130,36 +130,55 @@ namespace :dribbble do
       ns.teams_url = s['teams_url']
       ns.team = s['user']['team']
 
-      ns.save
-    end
+
+
+
+      response = HTTParty.get(ns.comments_url+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
+      recent_comments = JSON.parse(response.body)
+
+
+      recent_comments.each do |c|
+
+        nc= Comment.new
+
+        nc.comment_id = c["id"].to_s
+        nc.comment_created_at = c["created_at"]
+        nc.body = c["body"]
+        nc.user_avatar_url = c["user"]["avatar_url"]
+        nc.user_id = c["user"]["id"]
+        nc.user_name = c['user']['name']
+        puts nc.inspect
+      end
+
+      #   response = HTTParty.get(ns.buckets_url+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
+      #   recent_buckets = JSON.parse(response.body)
+      #
+      #   nc= Bucket.new
+      #   nc.comment_id = s["id"]
+      #   nc.comment_created_at = s["created_at"]
+      #   nc.body = s["body"]
+      #   nc.user_avatar_url = s["user"]["avatar_url"]
+      #   nc.user_id = s["user"]["id"]
+      #   nc.user_name = s['user']['name']
+      #
+      # puts nc.inspect
+
 
   end
+end
 
-  desc "TODO"
-  task get_comment: :environment do
-    url="https://api.dribbble.com/v1/shots/?sort=comments&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
-
-    response= HTTParty.get(url)
-    recent_shots =JSON.parse(response.body)
-
-    recent_shots.each do |s|
-      nc= Comment.new
-      nc.comment_id = s["id"]
-      nc.comment_created_at = s["created_at"]
-      nc.body = s["body"]
-      nc.user_avatar_url = s["user"]["avatar_url"]
-      nc.user_id = s["user"]["id"]
-      nc.user_name = s['user']['name']
-
-    puts ns.inspect
-
-  end
 end
 
 
 
 
-
-
-
-end
+  # desc "TODO"
+  # task get_comment: :environment do
+  #   url="https://api.dribbble.com/v1/shots/?sort=comments&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+  #
+  #
+  #
+  #   recent_shots.each do |s|
+  #
+  #
+  # end
