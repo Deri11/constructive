@@ -16,3 +16,7 @@ end
 #
 # <h1> this is the example </h1>
 # <img src='<%#= @shots.select {|s| (s.id==2434).images_normal } %>'>
+
+# <!-- <%# if Rails.env.development? %>
+#   <%#= console %>
+# <%# end %> -->

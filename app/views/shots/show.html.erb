@@ -7,7 +7,7 @@
     <div class="container">
       <header class="section-header">
         <h3><%= @shot.title %></h3>
-        <p>Posted by <%= link_to @shot.user_username, users_path %></p>
+        <p>Posted by <%= link_to @shot.user_username, user_path(@shot.user_id) %></p>
       </header>
 
 
@@ -88,9 +88,9 @@
               <p class="subtitle"><%= @shot.user_bio %></p>
 
               <ul class="user-stats">
-                <li><a href="user-profile.html"><i>Shots</i><span><%= @shot.shots_count %></span></a></li>
-                <li><a href="user-followers.html"><i>Followers</i><span><%= @shot.followers_count %></span></a></li>
-                <li><a href="user-followers.html"><i>Following</i><span><%= @shot.followings_count %></span></a></li>
+                <li><a href="user-profile.html"><i>Shots</i><span><%= @shot.shots_count %>45</span></a></li>
+                <li><a href="user-followers.html"><i>Followers</i><span><%= @shot.followers_count %>122</span></a></li>
+                <li><a href="user-followers.html"><i>Following</i><span><%= @shot.followings_count %>98</span></a></li>
               </ul>
               <a class="btn btn-success btn-sm" href="#">Following</a>
             </div>
