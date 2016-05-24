@@ -19,8 +19,14 @@ ActiveRecord::Schema.define(version: 20160524004542) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "comment_id"
+    t.string   "comment_created_at"
+    t.string   "body"
+    t.string   "user_avatar_url"
+    t.string   "user_id"
+    t.string   "user_name"
   end
 
   create_table "shots", force: :cascade do |t|
