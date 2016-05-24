@@ -8,9 +8,9 @@
   <div class="profile-head">
     <div class="container">
       <a href="user-profile.html"><img src="assets/img/avatar-2.jpg" alt="avatar"></a>
-      <h5><a href="#">DoeDesign</a></h5>
+      <h5><a href="#"><%= @user.designer_username %></a></h5>
       <p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
-      <p class="lead">Front-end developer</p>
+      <p class="lead"><%= @user.designer_full_name %></p>
       <p>Phasellus in ipsum vestibulum, maximus mauris a, venenatis quam. Vestibulum nec mi malesuada.</p>
 
       <ul class="social-icons">
