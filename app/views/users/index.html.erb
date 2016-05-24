@@ -1,1 +1,61 @@
-<p>test</p>
+<% @users.each do |user| %>
+<h5><a href="#"><%= user.designer_username %></a></h5>
+<p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
+<!-- Featured users -->
+<section>
+  <div class="container">
+    <header class="section-header">
+      <span>The best-est-es</span>
+      <h2>Featured Designers</h2>
+      <p>Our weekly selection showcasing top designers around the world.</p>
+    </header>
+
+    <div class="row">
+      <!-- User widget -->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="user-widget-mini">
+          <a href="user-profile.html">
+          <%= image_tag 'avatar-2.jpg', alt:'avatar' %></a>
+            <h5><a href="#">Jose Shams</a></h5>
+              <p class="lead">Front-end developer</p>
+                <small>135 Shot</small>
+        </div>
+      </div>
+
+      <!-- User widget -->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="user-widget-mini">
+          <a href="user-profile.html">
+          <%= image_tag 'avatar-2.jpg', alt:'avatar' %></a>
+            <h5><a href="#">Jose Shams</a></h5>
+              <p class="lead"><%= user.designer_username %></p>
+                <small><%= user.designer_full_name %></small>
+        </div>
+      </div>
+
+      <!-- User widget -->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="user-widget-mini">
+          <a href="user-profile.html">
+          <%= image_tag 'avatar-1.jpg', alt:'avatar' %></a>
+            <h5><a href="#">Jose Shams</a></h5>
+              <p class="lead">Front-end developer</p>
+                <small>135 Shot</small>
+        </div>
+      </div>
+
+      <!-- User widget -->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="user-widget-mini">
+          <a href="user-profile.html">
+          <%= image_tag 'avatar-1.jpg', alt:'avatar' %></a>
+            <h5><a href="#">Jose Shams</a></h5>
+              <p class="lead">Front-end developer</p>
+                <small>135 Shot</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<% end %>
