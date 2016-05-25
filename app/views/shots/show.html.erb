@@ -7,7 +7,7 @@
     <div class="container">
       <header class="section-header">
         <h3><%= @shot.title %></h3>
-        <p>Posted by <%= link_to @shot.user, user_path(@shot.user) %></p>
+        <p>Posted <%= time_ago_in_words(@shot.created_at) %> by <%= link_to @shot.user.designer_username, user_path(@shot.user) %></p>
       </header>
 
 
@@ -82,15 +82,15 @@
           <!-- User widget -->
           <div class="sidebar-block">
             <div class="shot-by-widget">
-              <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user_avatar_url , alt:'avatar' %></a>
-              <a class="username" href="user-profile.html"><%= @shot.user_name %></a>
-              <%= content_tag(:p, @shot.user_username, class:'title' ) %>
-              <p class="subtitle"><%= @shot.user_bio %></p>
+              <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user.designer_avatar_url , alt:'avatar' %></a>
+              <a class="username" href="<%= user_path(@shot) %>"><%= @shot.user.designer_username %></a>
+              <%= content_tag(:p, @shot.user.designer_full_name, class:'title' ) %>
+              <p class="subtitle"><%= @shot.user.designer_bio %></p>
 
               <ul class="user-stats">
-                <li><a href="user-profile.html"><i>Shots</i><span><%= @shot.shots_count %></span></a></li>
-                <li><a href="user-followers.html"><i>Followers</i><span><%= @shot.followers_count %></span></a></li>
-                <li><a href="user-followers.html"><i>Following</i><span><%= @shot.followings_count %></span></a></li>
+                <li><a href="<%= user_path(@shot) %>"><i>Shots</i><span><%= @shot.user.designer_added_shots_count %></span></a></li>
+                <li><a href="<%= user_path(@shot) %>"><i>Followers</i><span><%= @shot.user.designer_follower_count %></span></a></li>
+                <li><a href="<%= user_path(@shot) %>"><i>Following</i><span><%= @shot.user.designer_is_following_count %></span></a></li>
               </ul>
               <a class="btn btn-success btn-sm" href="#">Following</a>
             </div>
@@ -103,7 +103,7 @@
                 <span><%= @shot.viewcount %></span>
               </li>
               <li><a class="like" href="#"><i class="fa fa-heart"></i>
-                <span><%= @shot.likes_received_count %></span></a>
+                <span><%= @shot.likes_count %></span></a>
               </li>
             </ul>
           </div>
@@ -115,17 +115,11 @@
               <dt>Size</dt>
               <dd><%= @shot.width %> x <%= @shot.height %></dd>
 
-              <dt>File size</dt>
-              <dd>1.1 MB</dd>
-
-              <dt>File type</dt>
-              <dd><%= @shot.dribbble_type %></dd>
+              <dt>Buckets</dt>
+              <dd><%= @shot.buckets_count %></dd>
 
               <dt>Location</dt>
-              <dd><%= @shot.user_location %></dd>
-
-              <dt>License</dt>
-              <dd>GPL</dd>
+              <dd><%= @shot.user.designer_location %></dd>
 
             </dl>
           </div>
