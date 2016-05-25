@@ -11,13 +11,13 @@
               <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="shot shot-small">
                   <div class="shot-preview">
-                    <a class="img" href="<%= shot.image_url %>"><img src="<%= shot.images_normal %>"></a>
+                    <a class="img" href="<%= shot_path(shot.id) %>"><img src="<%= shot.images_normal %>"></a>
                   </div>
 
                   <div class="shot-info">
-                    <a href="#"><img src="<%= shot.user.designer_avatar_url %>" alt='avatar'></a>
-                    <h6><a href="<%= shot.image_url %>"><%= shot.title %></a></h6>
-                    <p><time datetime="<%= shot.created_at %>"></time> Added <%= time_ago_in_words(shot.created_at) %> in <a href="page-search.html">App</a></p>
+                    <a href="<%= user_path(shot) %>"><img src="<%= shot.user.designer_avatar_url %>" alt='avatar'></a>
+                    <h6><a href="<%= shot_path(shot.id) %>"><%= shot.title %></a></h6>
+                    <p><time datetime="<%= shot.created_at %>"></time> Added <%= time_ago_in_words(shot.created_at) %> by <a href="#">username w/link</a></p>
                   </div>
                 </div>
               </div>
