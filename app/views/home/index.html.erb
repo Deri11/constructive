@@ -150,50 +150,20 @@
 
         <div class="row">
           <!-- User widget -->
+          <% @users.last(4).each do |user| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="user-widget-mini">
-              <a href="user-profile.html">
-              <%= image_tag 'avatar-2.jpg', alt:'avatar' %></a>
-                <h5><a href="#">Jose Shams</a></h5>
-                  <p class="lead">Front-end developer</p>
-                    <small>135 Shot</small>
-            </div>
-          </div>
+              <a href="<%= user_path(user) %>">
+              <%= image_tag user.designer_avatar_url , alt:'avatar' %></a>
+                <h5><a href="<%= user_path(user) %>">
+                  <%= user.designer_full_name %></a></h5>
+                  <p class="lead"><%= user.designer_username %></p>
+                    <small><%= user.designer_added_shots_count %></small>
+                  </div>
+                </div>
+              <% end %>
 
-          <!-- User widget -->
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="user-widget-mini">
-              <a href="user-profile.html">
-              <%= image_tag 'avatar-2.jpg', alt:'avatar' %></a>
-                <h5><a href="#">Jose Shams</a></h5>
-                  <p class="lead">Front-end developer</p>
-                    <small>135 Shot</small>
-            </div>
-          </div>
-
-          <!-- User widget -->
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="user-widget-mini">
-              <a href="user-profile.html">
-              <%= image_tag 'avatar-1.jpg', alt:'avatar' %></a>
-                <h5><a href="#">Jose Shams</a></h5>
-                  <p class="lead">Front-end developer</p>
-                    <small>135 Shot</small>
-            </div>
-          </div>
-
-          <!-- User widget -->
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="user-widget-mini">
-              <a href="user-profile.html">
-              <%= image_tag 'avatar-1.jpg', alt:'avatar' %></a>
-                <h5><a href="#">Jose Shams</a></h5>
-                  <p class="lead">Front-end developer</p>
-                    <small>135 Shot</small>
-            </div>
-          </div>
         </div>
-
       </div>
     </section>
 
@@ -230,7 +200,3 @@
       </div>
     </section>
   </main>
-
-
-  <!-- <h1>heloo</h1>
-  <img src="<%=@shots[1].images_normal %>"> -->

@@ -1,5 +1,5 @@
 <!-- Featured users -->
-<section>
+<section class="bg-white">
   <div class="container">
     <header class="section-header">
       <span>The best-est-es</span>
@@ -7,19 +7,20 @@
       <p>Our weekly selection showcasing top designers around the world.</p>
     </header>
 
-</div>
-<div class="container">
-<% @users.each do |user| %>
     <div class="row">
       <!-- User widget -->
-      <div class="col-xs-12 col-sm-6 col-md-3">
+      <% @users.each do |user| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="user-widget-mini">
 
           <a href="<%= user_path(user) %>">
           <%= image_tag user.designer_avatar_url , alt:'' %></a>
-            <h5><a href="#"><%= user.designer_username %></a></h5>
-              <p class="lead"><%= user.designer_full_name %></p>
-              <p> <i class="fa fa-camera" >  </i><small><%= user.designer_added_shots_count %></small></p>
+            <h5><a href="<%= user_path(user) %>">
+              <%= user.designer_username %></a></h5>
+              <p class="lead">
+                <%= user.designer_full_name %>
+              <br><i class="fa fa-camera"> </i><small>
+                <%= user.designer_added_shots_count %></small></p>
         </div>
       </div>
       <% end %>
