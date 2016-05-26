@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160524004542) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment_id"
-    t.integer  "shots_id"
+    t.integer  "shot_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "comment_created_at"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160524004542) do
     t.string   "user_name"
   end
 
-  add_index "comments", ["shots_id"], name: "index_comments_on_shots_id"
+  add_index "comments", ["shot_id"], name: "index_comments_on_shot_id"
 
   create_table "shots", force: :cascade do |t|
     t.string   "title"
