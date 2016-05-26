@@ -16,7 +16,7 @@
       <div class="card-block">
         <form class="form-horizontal">
           <div class="form-group">
-              <%= render 'form' %>
+              <%= render 'form' %> < from render 'form'
           </div>
         </form>
       </div>
@@ -40,7 +40,14 @@
           <div class="form-group">
             <label for="input3" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="input3" value="john@doesite.me">
+              <input type="email" class="form-control" id="input3" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="input4" value="">
             </div>
           </div>
 
@@ -79,7 +86,7 @@
 
       <div class="card-block">
         <form method="post" enctype="multipart/form-data">
-          <input type="file" class="dropify" data-default-file="assets/img/avatar-2.jpg" data-max-height="150" data-max-width="150">
+          <input type="file" class="dropify" data-default-file="" data-max-height="150" data-max-width="150">
           <br>
           <button class="btn btn-primary btn-sm" type="submit">Update</button>
         </form>
