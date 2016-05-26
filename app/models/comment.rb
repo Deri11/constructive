@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  # belongs_to :shots
+  belongs_to :shot
+  belongs_to :user
 end

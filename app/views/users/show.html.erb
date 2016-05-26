@@ -8,7 +8,7 @@
       <h5><a href="#"><%= @user.designer_username %></a></h5>
       <p><i class="fa fa-map-marker"></i> <%= @user.designer_location %></p>
       <p class="lead"><%= @user.designer_full_name %></p>
-      <p><%= @user.designer_bio %></p>
+      <p><%= raw @user.designer_bio %></p>
 
       <ul class="social-icons">
         <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -16,7 +16,7 @@
         <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
         <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa fa-globe"></i></a></li>
+        <li><a href="<%= @user.designer_home_url %>" target="_blank"><i class="fa fa-globe"></i></a></li>
       </ul>
 
       <div class="row bottom-bar">
@@ -26,9 +26,9 @@
 
         <ul class="col-sm-12 col-md-6 tab-list">
           <li class="active"><a href="#"><i>Shots</i><span>125</span></a></li>
-          <li class="hidden-xs"><a href="#"><i>Likes</i><span>1.6K</span></a></li>
-          <li><a href="#"><i>Followers</i><span><%= @user.designer_follower_count %></span></a></li>
-          <li><a href="#"><i>Following</i><span><%= @user.designer_is_following_count %></span></a></li>
+          <li class="hidden-xs"><a ><i>Likes</i><span>1.6K</span></a></li>
+          <li><a ><i>Followers</i><span><%= @user.designer_follower_count %></span></a></li>
+          <li><a ><i>Following</i><span><%= @user.designer_is_following_count %></span></a></li>
         </ul>
       </div>
     </div>

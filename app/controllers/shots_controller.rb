@@ -2,16 +2,19 @@ class ShotsController < ApplicationController
   # before_action :set_shot, only: [:show, :edit, :update, :destroy]
 
   # GET /shots
-  # GET /shots.json
   def index
     @shots = Shot.all
     @users = User.all
+    @comments = Comment.all
   end
 
   # GET /shots/1
-  # GET /shots/1.json
   def show
     @shot = Shot.find(params[:id])
+    @users = User.all
+    @shots = Shot.all
+    @comments = Comment.all
+    @comment = Comment.new
   end
 
   # GET /shots/new
@@ -22,10 +25,10 @@ class ShotsController < ApplicationController
   # GET /shots/1/edit
   def edit
     @shot = Shot.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   # POST /shots
-  # POST /shots.json
   def create
     @shot = Shot.new(shot_params)
 
@@ -41,7 +44,6 @@ class ShotsController < ApplicationController
   end
 
   # PATCH/PUT /shots/1
-  # PATCH/PUT /shots/1.json
   def update
     respond_to do |format|
       if @shot.update(shot_params)
@@ -55,7 +57,6 @@ class ShotsController < ApplicationController
   end
 
   # DELETE /shots/1
-  # DELETE /shots/1.json
   def destroy
     @shot.destroy
     respond_to do |format|

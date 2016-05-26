@@ -33,18 +33,19 @@
               <h6>Comments (<%= @shot.comments_count %>)</h6>
 
               <div class="comment-pagination">
-                <a class="prev" href="#"><i class="fa fa-chevron-left"></i></a>
-                <a class="next" href="#"><i class="fa fa-chevron-right"></i></a>
+                <a class="prev" ><i class="fa fa-chevron-left"></i></a>
+                <a class="next" ><i class="fa fa-chevron-right"></i></a>
               </div>
             </div>
 
             <ul class="comments">
+
+            <!-- comment loop goes here -->
               <li>
                 <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Jose</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
+                <h6><a href="user-profile.html">Jose</a> <time datetime="<%= @shot.created_at %>"><%= time_ago_in_words(@shot.created_at) %></time></h6>
                 <p>Nam tincidunt diam id nisl accumsan molestie.</p>
               </li>
-
               <li>
                 <a href="user-profile.html"><%= image_tag 'avatar-1.jpg', alt:'' %></a>
                 <h6><a href="user-profile.html">Dumduri</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
@@ -85,7 +86,8 @@
               <a href="<%= user_path(@shot) %>"><%= image_tag @shot.user.designer_avatar_url , alt:'avatar' %></a>
               <a class="username" href="<%= user_path(@shot) %>"><%= @shot.user.designer_username %></a>
               <%= content_tag(:p, @shot.user.designer_full_name, class:'title' ) %>
-              <p class="subtitle"><%= @shot.user.designer_bio %></p>
+              <p class="subtitle"><%= raw @shot.user.designer_bio %></p>
+              <a href="<%= @shot.user.designer_home_url %>" target="_blank">My Website</a>
 
               <ul class="user-stats">
                 <li><a href="<%= user_path(@shot) %>"><i>Shots</i><span><%= @shot.user.designer_added_shots_count %></span></a></li>
@@ -131,11 +133,6 @@
               <% JSON.parse(@shot.tags).each do |tag| %>
               <a href="#"><%= tag %></a>
               <% end %>
-              <a href="#">App</a>
-              <a href="#">Light design</a>
-              <a href="#">Blue</a>
-              <a href="#">Pages</a>
-              <a href="#">Facebook</a>
             </div>
           </div>
 
@@ -153,14 +150,17 @@
 
           <!-- More shots -->
           <div class="sidebar-block">
-            <h6>More from <%= @shot.user_name %></h6>
-            <ul class="photo-list cols-2">
-              <li><a href="#"><%= image_tag 'shot-2.jpg', alt:'' %></a></li>
-              <li><a href="#"><%= image_tag 'shot-2.jpg', alt:'' %></a></li>
-              <li><a href="#"><%= image_tag 'shot-2.jpg', alt:'' %></a></li>
-              <li><a href="#"><%= image_tag 'shot-2.jpg', alt:'' %></a></li>
-            </ul>
-          </div>
+            <h6>Similiar photos</h6>
+              <ul class="photo-list cols-2">
+                <% @shots.where("tags LIKE ?", '%"#{@shot.tags}"%') do |simshot| %>
+                <li>
+                  <a href="<%= shot_path(@shot) %>">
+                <img src="<%= simshot %>"></a>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+
         </aside>
       </div>
       <%= link_to 'Edit', edit_shot_path(@shot) %> |
