@@ -1235,8 +1235,9 @@ section.section-lg {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus {
-  color: #fff;
-  background-color: #f98f9e;
+  color: #7a7a7a;
+  background-color: #c1e1d2;
+  border-color: #c1e1d2 !important;
 }
 
 .btn-success {

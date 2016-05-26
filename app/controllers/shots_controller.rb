@@ -21,6 +21,7 @@ class ShotsController < ApplicationController
 
   # GET /shots/1/edit
   def edit
+    @shot = Shot.find(params[:id])
   end
 
   # POST /shots
