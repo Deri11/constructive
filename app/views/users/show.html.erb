@@ -56,13 +56,13 @@
 
             <div class="shot-detail">
               <div class="shot-info">
-                <p><a href="page-search.html">more details</a></p>
+                <p><a href="<%= shot_path(shot) %>"><%= shot.title %></a></p>
               </div>
 
               <ul class="shot-stats">
-                <li><i class="fa fa-eye"></i><span>6.3k</span></li>
-                <li><a href="shot-gallery.html#comments"><i class="fa fa-comments"></i><span>328</span></a></li>
-                <li><a class="like" href="#"><i class="fa fa-heart-o"></i><span>1.2k</span></a></li>
+                <li><i class="fa fa-eye"></i><span><%= shot.viewcount %></span></li>
+                <li><a href="shot-gallery.html#comments"><i class="fa fa-comments"></i><span><%= shot.comments_count %></span></a></li>
+                <li><a class="like" href="#"><i class="fa fa-heart-o"></i><span><%= shot.likes_count %></span></a></li>
               </ul>
             </div>
             </div>
