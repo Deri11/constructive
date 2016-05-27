@@ -39,11 +39,12 @@
             </div>
 
             <ul class="comments">
-            <% @shot.comments.each do |comments| %>
+
+              <% @comments.each do |comments| %>
               <li>
-                <a href="#"><%= image_tag comments.user_avatar_url, alt:'' %></a>
+                <a href="#"><%= image_tag comments.shot.user_avatar_url, alt:'' %></a>
                 <h6><a href="#"><%= comments.user_name %></a><%= time_ago_in_words(comments.comment_created_at) %></h6>
-                <p><%= comments.body %></p>
+                <p><%= comments.user_id.body %></p>
               </li>
               <% end %>
 

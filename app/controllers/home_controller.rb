@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     else params[:search]
       @shots = Shot.search(params[:search]).order("created_at DESC")
       # @shots = Shot.all.order('created_at DESC')
-    end
+    end 
   end
 
 end
