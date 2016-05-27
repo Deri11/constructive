@@ -39,35 +39,18 @@
             </div>
 
             <ul class="comments">
-
-            <!-- comment loop goes here -->
+            <% @shot.comments.each do |comments| %>
               <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Jose</a> <time datetime="<%= @shot.created_at %>"><%= time_ago_in_words(@shot.created_at) %></time></h6>
-                <p>Nam tincidunt diam id nisl accumsan molestie.</p>
+                <a href="#"><%= image_tag comments.user_avatar_url, alt:'' %></a>
+                <h6><a href="#"><%= comments.user_name %></a><%= time_ago_in_words(comments.comment_created_at) %></h6>
+                <p><%= comments.body %></p>
               </li>
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-1.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Dumduri</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent scelerisque porta bibendum. Mauris ac libero convallis, facilisis diam quis, porta lorem. Aenean suscipit risus a faucibus porta.</p>
-              </li>
+              <% end %>
 
               <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Jose</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Ut pulvinar libero tortor, laoreet suscipit tellus varius nec. In tristique pretium leo sed accumsan. Mauris ac ex lectus. Fusce vitae imperdiet diam.</p>
-              </li>
-
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-1.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Dumduri</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Ut pulvinar libero tortor, laoreet suscipit tellus varius nec. In tristique pretium leo sed accumsan.</p>
-              </li>
-
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Mary</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Ut pulvinar libero tortor, laoreet suscipit tellus varius nec. Mauris ac ex lectus. Fusce vitae imperdiet diam.</p>
+                <a href="#"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
+                <h6><a href="#">Mary</a> <time datetime="<%= @shot.created_at %>">Time ago...</time></h6>
+                <p>Wow, what a great amazing spaztastic photo!  Tell me how you did it!  Can I buy it now????  What are your shipping fees?</p>
               </li>
             </ul>
 

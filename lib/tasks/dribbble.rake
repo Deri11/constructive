@@ -63,7 +63,7 @@ namespace :dribbble do
           projects_url: s['projects_url'],
           animated: s['animated'],
           tags: s['tags'],
-          user_id: user.id,
+          user_id: user.id
           )
 
         else

@@ -5,7 +5,9 @@
         <br><br>
         <div id="faq-search" class="form-group">
             <i class="ti-search fa fa-hand-o-right"></i>
-            <input type="text" class="form-control" name="search" placeholder="Find your inspiration...">
+            <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], type: "text", name: "search", class: "form-control", :name => nil, placeholder: "Find your inspiration..." %>
+            <% end %>
         </div>
       <br><br><br>
     </div>

@@ -6,6 +6,12 @@ class ShotsController < ApplicationController
     @shots = Shot.all
     @users = User.all
     @comments = Comment.all
+    if params[:search].blank?
+        puts "<h1>Oh snap, there aren't any images by that description.</h1>"
+    else params[:search]
+      @shots = Shot.search(params[:search]).order("created_at DESC")
+      # @shots = Shot.all.order('created_at DESC')
+    end
   end
 
   # GET /shots/1
@@ -13,8 +19,8 @@ class ShotsController < ApplicationController
     @shot = Shot.find(params[:id])
     @users = User.all
     @shots = Shot.all
-    @comments = Comment.all
-    @comment = Comment.new
+    # @comments = Comment.where(params[:id])
+    @comments = @shot.comments
   end
 
   # GET /shots/new

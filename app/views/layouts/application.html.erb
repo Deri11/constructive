@@ -48,7 +48,7 @@
                   <li><a class="active" href="#">Learning</a></li>
                 </ul>
               </li>
-              
+
               <!-- Save for later?
               <li>
                 <a href="#">User account</a>
@@ -86,9 +86,9 @@
           <!-- Search screen -->
           <div class="search-screen closed">
             <button class="search-closer"><i class="fa fa-times"></i></button>
-            <form class="search-form" action="page-search.html">
-              <input type="text" autocomplete="off" placeholder="Search for inspiration...">
-            </form>
+              <%= form_tag(shots_path, :method => "get", class: "search-form") do %>
+              <%= text_field_tag :search, params[:search], name: "search", type: "text", autocomplete: "off", :name => nil, placeholder: "Find your inspiration..." %>
+              <% end %>
           </div>
 
         </div>
