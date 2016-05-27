@@ -1,19 +1,17 @@
 <section class="bg-white">
-          <div class="container">
-            <header class="section-header">
+    <div class="container">
+      <header class="section-header">
+        <h2>Freshest Uploads</h2>
+          <p>Newest content from our members around the world.</p>
+      </header>
 
-              <h2>Freshest Uploads</h2>
-              <p>Newest content from our members around the world.</p>
-            </header>
-
-
-            <!-- Search screen -->
-            <div id="faq-search" class="form-group">
-                <i class="ti-search fa fa-hand-o-right"></i>
-                <%= form_tag(shots_path, :method => "get", id: "search-form") do %>
+      <!-- Attempted search screen -->
+          <!-- <div id="faq-search" class="form-group">
+            <i class="ti-search fa fa-hand-o-right"></i>
+              <%= form_tag(shots_path, :method => "get", id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], type: "text", name: "search", class: "form-control", :name => nil, placeholder: "Find your inspiration..." %>
-                <% end %>
-            </div>
+              <% end %>
+          </div> -->
 
           <div class="row">
               <!-- Shot -->
