@@ -66,6 +66,26 @@ namespace :dribbble do
           user_id: user.id
           )
 
+          commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
+          comments = JSON.parse(commentresponse.body)
+
+          comments.each do |c|
+          comments_dribbbleid = c["id"]
+
+          existing_comment = Comment.where(comment_id: comments_dribbbleid)
+
+          if existing_comment.empty?
+            newcomment = Comment.create(
+            comment_id: c["id"].to_s,
+            comment_created_at: c["created_at"],
+            body: c["body"],
+            user_avatar_url: c["user"]["avatar_url"],
+            user_id: c["user"]["id"],
+            user_name: c['user']['name'],
+            shot_id: newshot.id
+            )
+            end
+          end
         else
 
           if existing_shot.empty?
@@ -110,10 +130,12 @@ namespace :dribbble do
               body: c["body"],
               user_avatar_url: c["user"]["avatar_url"],
               user_id: c["user"]["id"],
-              user_name: c['user']['name']
+              user_name: c['user']['name'],
+              shot_id: newshot.id
               )
+              end
             end
-          end
+
         end
     end
   end
