@@ -16,9 +16,9 @@ namespace :dribbble do
 
     recent_shots.each do |s|
       users_dribbbleid = s['user']['id']
-      shots_dribbbleid = s["id"]
+      shots_dribbbleid = s['user']['id']
 
-      existing_shot = Shot.where(dribbble_id: shots_dribbbleid)
+
       existing_user = User.where(designer_id: users_dribbbleid)
 
       #IS THERE A EXISTING USER IN THE DATABASE? IF NO, THEN...
@@ -91,6 +91,8 @@ namespace :dribbble do
 
         #IF THERE IS AN EXISTING USER ALREADY, THEN CHECK IF THERE IS AN EXISTING SHOT.  IF THERE IS NOT AN EXISTING SHOT, THEN...
         else
+          existing_user = User.where(designer_id: users_dribbbleid)
+          existing_shot = Shot.where(user_id: existing_user[0].id)
           if existing_shot.empty?
             newshot = Shot.create(
               dribbble_id: s["id"],
@@ -115,7 +117,7 @@ namespace :dribbble do
               projects_url: s['projects_url'],
               animated: s['animated'],
               tags: s['tags'],
-              user_id: newuser.id
+              user_id: existing_user[0].id
               )
 
             commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")
