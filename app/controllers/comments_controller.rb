@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
   def index
-    def show
     @comment = Comment.find(params[:id])
     @comments = Comment.all
     @shots = Shot.all
@@ -46,5 +45,4 @@ class CommentsController < ApplicationController
       end
     end
   end
-
-end 
+end
