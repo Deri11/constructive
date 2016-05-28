@@ -92,7 +92,7 @@ namespace :dribbble do
             projects_url: s['projects_url'],
             animated: s['animated'],
             tags: s['tags'],
-            user_id: user.id)
+            user_id: existing_user.first.id)
           end
 
             commentresponse = HTTParty.get(s['comments_url']+"?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03")

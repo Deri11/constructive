@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'hirb'
 gem 'seed_dump'
 gem 'rails-erd'
+gem 'clearance'
 
 group :development, :test do
   gem 'byebug'
