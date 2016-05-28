@@ -6,7 +6,7 @@ namespace :dribbble do
     url="https://api.dribbble.com/v1/shots/?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
 
 #URL API CALL FOR TOP 12 MOST-RECENT SHOTS
-    # url="https://api.dribbble.com/v1/shots/?recent&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+    # url="https://api.dribbble.com/v1/shots/?views&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
 
     response= HTTParty.get(url)
     recent_shots =JSON.parse(response.body)
