@@ -3,14 +3,13 @@ class ShotsController < ApplicationController
 
   # GET /shots
   def index
-    @shots = Shot.all
     @users = User.all
+    @shots = Shot.all
     @comments = Comment.all
-    if params[:search].blank?
-        puts "<h1>Oh snap, there aren't any images by that description.</h1>"
-    else params[:search]
+    if params[:search]
       @shots = Shot.search(params[:search]).order("created_at DESC")
-      # @shots = Shot.all.order('created_at DESC')
+    else
+      @shots = Shot.all.order('created_at DESC')
     end
   end
 

@@ -2112,8 +2112,8 @@ form .text-muted {
 
 .shot-preview .text-overlay .desc {
   display: block;
-  font-size: 90%;
-  line-height: 22px;
+  font-size: 80%;
+  line-height: 15px;
   max-height: 88px;
   overflow: hidden;
   color: #606873;

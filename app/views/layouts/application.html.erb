@@ -87,7 +87,7 @@
           <div class="search-screen closed">
             <button class="search-closer"><i class="fa fa-times"></i></button>
               <%= form_tag(shots_path, :method => "get", class: "search-form") do %>
-              <%= text_field_tag :search, params[:search], name: "search", type: "text", autocomplete: "off", :name => nil, placeholder: "Find your inspiration..." %>
+              <%= text_field_tag :search, params[:search], name: "search", type: "text", autocomplete: "off", placeholder: "Find your inspiration..." %>
               <% end %>
           </div>
 
@@ -162,6 +162,10 @@
 
 <!-- Back to top button -->
 <a id="scroll-up" href="#"><i class="fa fa-chevron-up"></i></a>
+
+<% if Rails.env.development? %>
+<%= console %>
+<%end%>
 
 </body>
 </html>

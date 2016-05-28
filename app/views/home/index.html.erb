@@ -5,8 +5,8 @@
         <br><br>
         <div id="faq-search" class="form-group">
             <i class="ti-search fa fa-hand-o-right"></i>
-            <%= form_tag(root_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], type: "text", name: "search", class: "form-control", :name => nil, placeholder: "Find your inspiration..." %>
+            <%= form_tag(shots_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Find your inspiration...", class: "form-control", name: "search", type: "text" %>
             <% end %>
         </div>
       <br><br><br>
@@ -23,6 +23,8 @@
           <h2>Staff Favorites</h2>
           <p>Curated selection of awesome, inovative designs.</p>
         </header>
+
+
 
       <div class="row">
           <!-- Shot -->
