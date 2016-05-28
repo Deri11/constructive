@@ -3,13 +3,13 @@ namespace :dribbble do
   task get_recent: :environment do
 
 #URL API CALL FOR TOP 12 MOST-POPULAR SHOTS
-    url="https://api.dribbble.com/v1/shots/?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+    # url="https://api.dribbble.com/v1/shots/?access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
 
 #URL API CALL FOR TOP 12 MOST-RECENT SHOTS
-    # url="https://api.dribbble.com/v1/shots/?views&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+    url="https://api.dribbble.com/v1/shots/?recent&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
 
 #URL API CALL FOR SPECIFIC USERS SHOTS - BUT WHOLE SYNTAX NEEDS TO BE ADDED BELOW TO MAKE FUNCTIONAL
-    #url="https://api.dribbble.com/v1/users/25514/?shots&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
+    # url="https://api.dribbble.com/v1/users/5025/?shots&access_token=6359e4078d55834cf715249524d38c2a8467f25e1a881646a5fc436210a2ff03"
 
     response = HTTParty.get(url)
     recent_shots = JSON.parse(response.body)
@@ -73,7 +73,7 @@ namespace :dribbble do
         comments = JSON.parse(commentresponse.body)
         comments.each do |c|
         comments_dribbbleid = c["id"]
-        
+
         existing_comment = Comment.where(comment_id: comments_dribbbleid)
 
         if existing_comment.empty?
