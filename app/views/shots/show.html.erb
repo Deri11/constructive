@@ -121,10 +121,11 @@
             <h6>Tags</h6>
             <div class="tag-list">
               <% JSON.parse(@shot.tags).each do |tag| %>
-                <a href="#"><%= tag %></a>
+                <%= link_to tag, shots_path %>
               <% end %>
             </div>
           </div>
+
 
           <!-- More shots -->
           <div class="sidebar-block">
