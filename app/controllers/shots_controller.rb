@@ -3,9 +3,14 @@ class ShotsController < ApplicationController
 
   # GET /shots
   def index
-    @shots = Shot.all
     @users = User.all
+    @shots = Shot.all
     @comments = Comment.all
+    if params[:search]
+      @shots = Shot.search(params[:search]).order("created_at DESC")
+    else
+      @shots = Shot.all.order('created_at DESC')
+    end
   end
 
   # GET /shots/1
@@ -13,8 +18,8 @@ class ShotsController < ApplicationController
     @shot = Shot.find(params[:id])
     @users = User.all
     @shots = Shot.all
-    @comments = Comment.all
-    @comment = Comment.new
+    # @comments = Comment.where(params[:id])
+    @comments = @shot.comments
   end
 
   # GET /shots/new

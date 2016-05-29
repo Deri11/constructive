@@ -14,6 +14,7 @@ gem 'hirb'
 gem 'seed_dump'
 gem 'rails-erd'
 gem 'clearance'
+gem 'clockwork'
 
 group :development, :test do
   gem 'byebug'

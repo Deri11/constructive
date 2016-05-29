@@ -19,7 +19,7 @@
           <div class="pull-left">
             <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="fa fa-bars"></i></a>
 
-            <div class="logo">
+            <div class="constructive-logo logo">
               <%= image_tag 'logo.png', alt:'constructive-logo' %>
             </div>
 
@@ -56,6 +56,7 @@
               <%= link_to 'Sign in', sign_in_path %>
               <% end %>
             </li>
+
 
               <!-- Save for later?
               <li>
@@ -94,9 +95,9 @@
           <!-- Search screen -->
           <div class="search-screen closed">
             <button class="search-closer"><i class="fa fa-times"></i></button>
-            <form class="search-form" action="page-search.html">
-              <input type="text" autocomplete="off" placeholder="Search for inspiration...">
-            </form>
+              <%= form_tag(shots_path, :method => "get", class: "search-form") do %>
+              <%= text_field_tag :search, params[:search], name: "search", type: "text", autocomplete: "off", placeholder: "Find your inspiration..." %>
+              <% end %>
           </div>
 
         </div>
@@ -175,6 +176,10 @@
 
 <!-- Back to top button -->
 <a id="scroll-up" href="#"><i class="fa fa-chevron-up"></i></a>
+
+<!-- <%# if Rails.env.development? %>
+<%#= console %>
+<%#end%> -->
 
 </body>
 </html>

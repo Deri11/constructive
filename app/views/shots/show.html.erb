@@ -40,39 +40,17 @@
 
             <ul class="comments">
 
-            <!-- comment loop goes here -->
+              <% @comments.each do |comments| %>
               <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Jose</a> <time datetime="<%= @shot.created_at %>"><%= time_ago_in_words(@shot.created_at) %></time></h6>
-                <p>Nam tincidunt diam id nisl accumsan molestie.</p>
+                <img src="<%= comments.user_avatar_url %>">
+                <h6><%= comments.user_name %> <time><%= time_ago_in_words(comments.comment_created_at) %></time></h6>
+                <p><%= raw comments.body %></p>
               </li>
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-1.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Dumduri</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent scelerisque porta bibendum. Mauris ac libero convallis, facilisis diam quis, porta lorem. Aenean suscipit risus a faucibus porta.</p>
-              </li>
-
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Jose</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Ut pulvinar libero tortor, laoreet suscipit tellus varius nec. In tristique pretium leo sed accumsan. Mauris ac ex lectus. Fusce vitae imperdiet diam.</p>
-              </li>
-
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-1.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Dumduri</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Ut pulvinar libero tortor, laoreet suscipit tellus varius nec. In tristique pretium leo sed accumsan.</p>
-              </li>
-
-              <li>
-                <a href="user-profile.html"><%= image_tag 'avatar-2.jpg', alt:'' %></a>
-                <h6><a href="user-profile.html">Mary</a> <time datetime="<%= @shot.created_at %>">12 hours ago</time></h6>
-                <p>Ut pulvinar libero tortor, laoreet suscipit tellus varius nec. Mauris ac ex lectus. Fusce vitae imperdiet diam.</p>
-              </li>
+              <% end %>
             </ul>
 
             <form class="comment-form">
-              <%= image_tag 'avatar-2.jpg', alt:'' %>
+              <%= image_tag 'avatar-1.jpg', alt:'' %>
               <p><input type="text" class="form-control" placeholder="Leave a comment..."></p>
             </form>
 
@@ -110,6 +88,18 @@
             </ul>
           </div>
 
+          <!-- Share -->
+          <!-- <div class="sidebar-block">
+            <h6>Share on</h6>
+            <ul class="social-icons text-center">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div> -->
+
           <!-- Details -->
           <div class="sidebar-block">
             <h6>Details</h6>
@@ -131,32 +121,20 @@
             <h6>Tags</h6>
             <div class="tag-list">
               <% JSON.parse(@shot.tags).each do |tag| %>
-              <a href="#"><%= tag %></a>
+                <a href="#"><%= tag %></a>
               <% end %>
             </div>
-          </div>
-
-          <!-- Share -->
-          <div class="sidebar-block">
-            <h6>Share on</h6>
-            <ul class="social-icons text-center">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
           </div>
 
           <!-- More shots -->
           <div class="sidebar-block">
             <h6>Similiar photos</h6>
               <ul class="photo-list cols-2">
-                <% @shots.where("tags LIKE ?", '%"#{@shot.tags}"%') do |simshot| %>
-                <li>
-                  <a href="<%= shot_path(@shot) %>">
-                <img src="<%= simshot %>"></a>
-                </li>
+                <% @shots.search(@shot.tags) do |simshot| %>
+                  <li>
+                    <a href="<%= shot_path(@shot) %>">
+                      <img src="<%= simshot.images_normal %>"></a>
+                  </li>
                 <% end %>
               </ul>
             </div>

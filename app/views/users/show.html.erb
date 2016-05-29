@@ -49,8 +49,8 @@
 
               <a class="text-overlay" href="<%= shot_path(shot) %>">
                 <span class="heading"><%= shot.title %></span>
-                <span class="desc"><%= raw shot.description %></span>
-                <time datetime="<%= shot.created_at %>"><%= time_ago_in_words(shot.created_at) %></time>
+                <time datetime="<%= shot.created_at %>">
+                  Added <%= time_ago_in_words(shot.created_at) %></time>
               </a>
             </div>
 

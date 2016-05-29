@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @users = User.all
     @shots = Shot.all
     @comments = Comment.all
-  end
+  end 
 
   # GET /users/1
   def show
