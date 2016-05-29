@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :require_login, only: [:new, :edit, :update, :destroy]
 
   def index
     @comment = Comment.find(params[:id])

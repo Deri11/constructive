@@ -1,5 +1,6 @@
 class ShotsController < ApplicationController
   # before_action :set_shot, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:edit, :update, :destroy]
 
   # GET /shots
   def index

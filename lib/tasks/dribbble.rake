@@ -24,6 +24,8 @@ namespace :dribbble do
       #IS THERE A EXISTING USER IN THE DATABASE? IF NO, THEN...
       if existing_user.empty?
         newuser = User.create(
+          email: Digest::MD5.hexdigest(s['user']['username'] + Time.now().to_s) + '@nowhere.org',
+          password: 'nopassword',
           designer_id: s['user']['id'],
           designer_full_name: s['user']['name'],
           designer_username: s['user']['username'],
