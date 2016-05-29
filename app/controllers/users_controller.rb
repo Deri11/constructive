@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @users = User.all
     @shots = Shot.all
     @comments = Comment.all
-  end 
+  end
 
   # GET /users/1
   def show
@@ -73,6 +73,6 @@ class UsersController < ApplicationController
 private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      params.fetch(:user, {}).permit(:password, :email)
     end
 end
