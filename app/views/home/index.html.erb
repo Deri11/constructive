@@ -31,8 +31,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="/shots/<%= @shots[1].id %>"><img src="<%=@shots[1].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[1].likes_count %></span>
+                <a class="img" href="<%= shot_path(1) %>"><img src="<%= @shots[0].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[0].likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -42,19 +42,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="/shots/<%= @shots[2].id %>"><img src="<%=@shots[2].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[2].likes_count %></span>
-                <!-- <span class="black-overlay"></span> --></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Shot -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="shot shot-small">
-              <div class="shot-preview">
-                <a class="img" href="/shots/<%= @shots[3].id %>"><img src="<%=@shots[3].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[3].likes_count %></span>
+                <a class="img" href="<%= shot_path(16) %>"><img src="<%=@shots[15].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[15].likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -64,8 +53,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="/shots/<%= @shots[4].id %>"><img src="<%=@shots[4].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[4].likes_count %></span>
+                <a class="img" href="<%= shot_path(12) %>"><img src="<%=@shots[11].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[11].likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -75,8 +64,8 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="/shots/<%= @shots[5].id %>"><img src="<%=@shots[5].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[5].likes_count %></span>
+                <a class="img" href="<%= shot_path(15) %>"><img src="<%=@shots[14].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[14].likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
@@ -86,8 +75,19 @@
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="shot shot-small">
               <div class="shot-preview">
-                <a class="img" href="/shots/<%= @shots[6].id %>"><img src="<%=@shots[6].images_normal %>" alt="" >
-                <span class="like liked"><%=@shots[6].likes_count %></span>
+                <a class="img" href="<%= shot_path(11) %>"><img src="<%=@shots[10].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[10].likes_count %></span>
+                <span class="black-overlay"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shot -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="shot shot-small">
+              <div class="shot-preview">
+                <a class="img" href="<%= shot_path(9) %>"><img src="<%=@shots[8].images_normal %>" alt="" >
+                <span class="like liked"><%=@shots[8].likes_count %></span>
                 <span class="black-overlay"></span></a>
               </div>
             </div>
