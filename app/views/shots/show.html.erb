@@ -10,7 +10,6 @@
         <p>Posted <%= time_ago_in_words(@shot.created_at) %> by <%= link_to @shot.user.designer_username, user_path(@shot.user) %></p>
       </header>
 
-
       <div class="row">
         <div class="col-xs-12 col-md-8">
 
@@ -18,7 +17,7 @@
           <div class="card no-margin-top">
             <div class="card-block">
 
-              <img src="<%= @shot.images_normal %>" width="700" data-lity>
+              <img src="<%= @shot.images_hidpi %>" width="700" data-lity>
 
               <hr>
 
