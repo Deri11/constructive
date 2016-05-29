@@ -1,2 +1,36 @@
 @import "bootstrap";
 @import "dribs";
+
+
+#clearance {
+  margin: auto;
+  width: 300px;
+  margin-bottom: 75px;
+  margin-top: 100px;
+}
+
+#clearance > h2 {
+  text-align: center;
+}
+
+#clearance form .text-field input, #clearance form .password-field input {
+  background-color: #d0d0d0;
+  border: 1px;
+  width:100%;
+  font-size: 24px;
+}
+
+#clearance form .submit-field {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.submit-field {
+  width: 100%;
+}
+.submit-field input {
+  width: 100%;
+  margin: auto;
+  background-color: inherit;
+  border: 0;
+}
