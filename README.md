@@ -71,7 +71,7 @@ Ensure that your Postgresql server is running and start your server from the com
 In your browser visit the `localhost` address identified in your terminal, typically this is `localhost:3000`.
 
 ## About Constructive
-![logo](http://s32.postimg.org/rs2i3yxfp/php_R89d_YEAM.jpg)    
+![logo](http://s33.postimg.org/xxaj6bl7z/master_logo.png)    
 Be inspired, be CONSTRUCTIVE.    
 
 Constructive is maintained and funded by the students at [Wyncode Academy](https://wyncode.co/).    
